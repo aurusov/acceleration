@@ -1,3 +1,5 @@
+#include <iostream>
+
 typedef double Speed;
 typedef double Length;
 typedef double Acceleration;
@@ -56,6 +58,11 @@ void main()
 	{
 		Xm += LengthNext(delta);
 		delta = Xs - Xm;
+
+		std::cout << "Am = " << Am << "   "
+		          << "Vm = " << Vm << "   "
+		          << "Xm = " << Xm << "   "
+		          << std::endl;
 	}
 
 	int i = 1;
