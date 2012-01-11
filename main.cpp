@@ -1,4 +1,3 @@
-
 typedef double Speed;
 typedef double Length;
 typedef double Acceleration;
@@ -19,6 +18,7 @@ Acceleration AccelerationNext(Length Li, Speed Vi, Acceleration Ai)
 	if (Vi == 0.0 && Ai == 0.0)
 		return Amax;
 
+	double dT = 100;
 	Acceleration Anext = (2 * Li - 2 * Vi * dT) / dT / dT;
 
 	if (Anext > Amax)
@@ -52,7 +52,7 @@ Length LengthNext(Length Li)
 void main()
 {
 	Length delta = Xs - Xm;
-	while (delta > 0.0)
+	while (Vm >= 0.0)
 	{
 		Xm += LengthNext(delta);
 		delta = Xs - Xm;
