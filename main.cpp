@@ -6,7 +6,7 @@ typedef double Length;
 typedef double Acceleration;
 typedef double TimeStep;
 
-static const TimeStep     dT   = 1.0;
+static const TimeStep     dT   = 0.5;
 static const Length       Xs   = 1000.0;
 static const Speed        Vmax = 30.5;
 static const Speed        Vmin = 0.0;
