@@ -17,7 +17,7 @@ static Speed        Vm = 0.0;
 static Acceleration Am = 0.0;
 
 //! Тормозной путь
-//! param  V - текущая скросроть автомобиля
+//! param  V - текущая скрость автомобиля
 //! result     величина тормозного пути
 Length brakingDistance(Speed V)
 {
@@ -31,14 +31,13 @@ Acceleration AccelerationNext(Length Li, Speed Vi, Acceleration Ai)
 	Acceleration Anext;
 
 	Length delta        = Li - Lb;
-	Length deltaAbs     = fabs(delta);
-	Length minPrecision = Vi * dT;
+	Length minPrecision = 0.0;
 
-	if (delta <= 0.0)
+	if (delta <= minPrecision)
 	{
 		Anext = -Amax;
 	}
-	else if (delta > 0.0)
+	else if (delta > minPrecision)
 	{
 		Anext = Amax;
 	}
@@ -66,10 +65,6 @@ Speed SpeedNext(Length Li, Speed Vi, Acceleration Ai)
 	else if (Vnext < -Vmin)
 	{
 		Vnext = -Vmin;
-	}
-	else if (fabs(Vnext) < 0.1)
-	{
-		Vnext = 0.0;
 	}
 
 	return Vnext;
