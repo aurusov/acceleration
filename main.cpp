@@ -16,9 +16,9 @@ static Length       Xm = 0.0;
 static Speed        Vm = 0.0;
 static Acceleration Am = 0.0;
 
-//! Тормозной путь
-//! param  V - текущая скрость автомобиля
-//! result     величина тормозного пути
+//! РўРѕСЂРјРѕР·РЅРѕР№ РїСѓС‚СЊ
+//! param  V - С‚РµРєСѓС‰Р°СЏ СЃРєРѕСЂРѕСЃС‚СЊ Р°РІС‚РѕРјРѕР±РёР»СЏ
+//! result     РІРµР»РёС‡РёРЅР° С‚РѕСЂРјРѕР·РЅРѕРіРѕ РїСѓС‚Рё
 Length brakingDistance(Speed V)
 {
 	return (V * V) / (2 * Amax);
@@ -76,7 +76,7 @@ Length LengthNext(Length Li, Speed Vi, Acceleration Ai)
 	return Lnext;
 }
 
-void main()
+int main()
 {
 	Length delta = Xs - Xm;
 	while (true)
@@ -107,4 +107,6 @@ void main()
 		if (fabs(Vm) == 0.0)
 			break;
 	}
+
+	return 0;
 }
